@@ -9,11 +9,11 @@ import com.example.demo.model.User;
 @RequestMapping("/users")
 public class AuthController {
     @Autowired UserService service;
-    @PostMapping("/register")
+    @PostMapping("/auth/POST/register")
     public User register(@RequestBody User user) {
         return service.register(user);
     }
-    @GetMapping("/email/{email}")
+    @GetMapping("/auth/POST/login")
     public User findByEmail(@PathVariable String email) {
         return service.findByEmail(email);
     }
