@@ -8,15 +8,11 @@ import com.exmaple.demo.model.User;
 @RestController
 @RequestMapping("/users")
 public class AuthController {
-
-    @Autowired
-    private UserService service;
-
+    @Autowired UserService service;
     @PostMapping("/register")
     public User register(@RequestBody User user) {
         return service.register(user);
     }
-
     @GetMapping("/email/{email}")
     public User findByEmail(@PathVariable String email) {
         return service.findByEmail(email);
