@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.model.Skill;
 
 @Repository
-public interface SkillRepository extends JpaRepository<Skill,>{
+public interface SkillRepository extends JpaRepository<Skill,Long>{
 
 }
