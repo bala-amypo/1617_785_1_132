@@ -1,10 +1,10 @@
-package com.exmaple.demo.service.impl;
+package com.example.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.exmaple.demo.service.SkillOfferService;
-import com.exmaple.demo.repository.SkillOfferRepository;
+import com.example.demo.service.SkillOfferService;
+import com.example.demo.repository.SkillOfferRepository;
 import com.example.demo.model.SkillOffer;
 
 @Service
