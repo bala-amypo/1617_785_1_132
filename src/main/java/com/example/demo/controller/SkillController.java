@@ -14,7 +14,7 @@ import com.example.demo.service.SkillService;
 @RestController
 public class SkillController{
     @Autowired SkillService ss;
-    @PostMapping("/skills")
+    @PostMapping("/POST")
     public Skill create(@RequestBody Skill skill){
         return ss.createSkill(skill);
     }
