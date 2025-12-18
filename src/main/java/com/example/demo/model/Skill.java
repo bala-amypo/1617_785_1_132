@@ -46,7 +46,7 @@ public class Skill{
     public void setActive(Boolean active) {
         this.active = active;
     }
-    public Skill() {
+    public Skill(){
     }
     public Skill(Long id, String name, String category, String description, Boolean active) {
         this.id = id;
