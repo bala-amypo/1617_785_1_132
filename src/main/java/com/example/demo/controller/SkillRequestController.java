@@ -7,10 +7,10 @@ import com.example.demo.service.SkillRequestService;
 import com.example.demo.model.SkillRequest;
 
 @RestController
-@RequestMapping("/api/skill-requests/POST")
+@RequestMapping("/skill-requests")
 public class SkillRequestController {
     @Autowired SkillRequestService service;
-    @PostMapping(/api/skill-requests/)
+    @PostMapping("/api/skill-requests/POST")
     public SkillRequest create(@RequestBody SkillRequest request) {
         return service.createRequest(request);
     }
