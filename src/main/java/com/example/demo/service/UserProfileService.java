@@ -4,4 +4,4 @@ import com.example.demo.model.UserProfile;
 
 public class UserProfileService{
     
-}
+} 

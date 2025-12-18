@@ -8,4 +8,4 @@ import com.example.demo.model.UserProfile;
 @Service
 public class UserProfileServieImpl implements UserProfileService{
     @Autowired UserProfileRepository ;
-}
+} 
