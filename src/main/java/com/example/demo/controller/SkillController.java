@@ -22,17 +22,14 @@ public class SkillController{
     public Skill update(@PathVariable Long id,@RequestBody Skill skill){
         return ss.updateSkill(id,skill);
     }
-
     @GetMapping("/skills/{id}")
     public Skill get(@PathVariable Long id){
         return ss.getSkillById(id);
     }
-
     @GetMapping("/skills")
     public List<Skill> getAll(){
         return ss.getAllSkills();
     }
-
     @PutMapping("/skills/deactivate/{id}")
     public void deactivate(@PathVariable Long id){
         ss.deactivateSkill(id);
