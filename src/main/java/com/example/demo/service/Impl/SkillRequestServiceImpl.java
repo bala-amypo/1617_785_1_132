@@ -1,11 +1,11 @@
-package com.exmaple.demo.service.impl;
+package com.example.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.exmaple.demo.service.SkillRequestService;
-import com.exmaple.demo.repository.SkillRequestRepository;
-import com.exmaple.demo.model.SkillRequest;
+import com.example.demo.service.SkillRequestService;
+import com.example.demo.repository.SkillRequestRepository;
+import com.example.demo.model.SkillRequest;
 
 @Service
 public class SkillRequestServiceImpl implements SkillRequestService {
