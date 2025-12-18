@@ -22,20 +22,6 @@ public class MatchRecord{
     private Skill skillOfferedByB;
     private LocalDateTime matchedAt;
     private String status;
-    public MatchRecord(){
-        this.status="PENDING";
-    }
-    public MatchRecord(Long id,User userA,User userB,
-                       Skill skillOfferedByA,Skill skillOfferedByB,
-                       LocalDateTime matchedAt,String status){
-        this.id=id;
-        this.userA=userA;
-        this.userB=userB;
-        this.skillOfferedByA=skillOfferedByA;
-        this.skillOfferedByB=skillOfferedByB;
-        this.matchedAt=matchedAt;
-        this.status=status;
-    }
     public Long getId(){
         return id;
     }
@@ -76,6 +62,20 @@ public class MatchRecord{
         this.matchedAt=matchedAt;
     }
     public void setStatus(String status){
+        this.status=status;
+    }
+    public MatchRecord(){
+        this.status="PENDING";
+    }
+    public MatchRecord(Long id,User userA,User userB,
+                       Skill skillOfferedByA,Skill skillOfferedByB,
+                       LocalDateTime matchedAt,String status){
+        this.id=id;
+        this.userA=userA;
+        this.userB=userB;
+        this.skillOfferedByA=skillOfferedByA;
+        this.skillOfferedByB=skillOfferedByB;
+        this.matchedAt=matchedAt;
         this.status=status;
     }
 }
