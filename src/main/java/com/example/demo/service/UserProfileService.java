@@ -1,7 +1,7 @@
 package com.exmaple.demo.service;
 
-import com.example.demo.model.MatchRecord;
+import com.example.demo.model.UserProfile;
 
-public class MatchmakingServie{
+public class UserProfileService{
     
 }
