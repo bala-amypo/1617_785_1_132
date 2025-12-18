@@ -18,7 +18,7 @@ public class UserProfile{
     @Column(unique=true)
     private String email;
     private String bio;
-    private Bool atcive;
+    private boolean atcive;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
