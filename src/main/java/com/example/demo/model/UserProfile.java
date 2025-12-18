@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Generated Value;
 import jakarta.persistence.GenerationType;
-
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -16,6 +16,6 @@ public class UserProfile{
     private String email;
     private String bio;
     private Bool atcive;
-    private Date createdAt;
-    private Date updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
