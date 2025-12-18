@@ -26,12 +26,10 @@ public class SkillOfferController{
     public SkillOffer get(@PathVariable Long id){
         return sos.getOfferById(id);
     }
-
     @GetMapping("/offers/user/{userId}")
     public List<SkillOffer> getByUser(@PathVariable Long userId){
         return sos.getOffersByUser(userId);
     }
-
     @PutMapping("/offers/deactivate/{id}")
     public void deactivate(@PathVariable Long id){
         sos.deactivateOffer(id);
