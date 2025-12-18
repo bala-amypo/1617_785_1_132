@@ -1,11 +1,11 @@
-package com.exmaple.demo.service.impl;
+package com.example.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.exmaple.demo.service.MatchmakingService;
-import com.exmaple.demo.repository.MatchRecordRepository;
-import com.exmaple.demo.model.MatchRecord;
+import com.example.demo.service.MatchmakingService;
+import com.example.demo.repository.MatchRecordRepository;
+import com.example.demo.model.MatchRecord;
 
 @Service
 public class MatchmakingServiceImpl implements MatchmakingService {
