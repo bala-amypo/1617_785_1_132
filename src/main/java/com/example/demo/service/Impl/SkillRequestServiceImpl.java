@@ -8,4 +8,4 @@ import com.example.demo.model.SkillRequest;
 @Service
 public class SkillRequestServieImpl implements SkillRequestServie{
     @Autowired SkillRequestRepository ;
-}
+} 
