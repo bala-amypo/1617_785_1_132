@@ -14,23 +14,23 @@ import com.example.demo.service.SkillService;
 @RestController
 public class SkillController{
     @Autowired SkillService ss;
-    @PostMapping("/POST")
+    @PostMapping("/api/skills/POST")
     public Skill create(@RequestBody Skill skill){
         return ss.createSkill(skill);
     }
-    @PutMapping("/skills/{id}")
+    @PutMapping("/api/skills/PUT/{id}")
     public Skill update(@PathVariable Long id,@RequestBody Skill skill){
         return ss.updateSkill(id,skill);
     }
-    @GetMapping("/skills/{id}")
+    @GetMapping("/api/skills/GET/{id}")
     public Skill get(@PathVariable Long id){
         return ss.getSkillById(id);
     }
-    @GetMapping("/skills")
+    @GetMapping("/api/skills/GET")
     public List<Skill> getAll(){
         return ss.getAllSkills();
     }
-    @PutMapping("/skills/deactivate/{id}")
+    @PutMapping("/api/skills/PUT/{id}/deactivate")
     public void deactivate(@PathVariable Long id){
         ss.deactivateSkill(id);
     }
