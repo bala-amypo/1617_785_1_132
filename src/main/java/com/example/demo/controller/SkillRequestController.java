@@ -1,10 +1,10 @@
-package com.exmaple.demo.controller;
+package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.exmaple.demo.service.SkillRequestService;
-import com.exmaple.demo.model.SkillRequest;
+import com.example.demo.service.SkillRequestService;
+import com.example.demo.model.SkillRequest;
 
 @RestController
 @RequestMapping("/skill-requests")
