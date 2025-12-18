@@ -10,5 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserProfileController{
     @Autowired UserProfileService ups;
     @PostMapping("/POST")
+    public UserProfile createuserprofile(@RequestBody UserProfile up){
+        return ups.
+    }
 
 }
