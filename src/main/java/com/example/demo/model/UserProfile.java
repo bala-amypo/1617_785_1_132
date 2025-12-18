@@ -18,7 +18,8 @@ public class UserProfile{
     @Column(unique=true)
     private String email;
     private String bio;
-    private boolean atcive;
+    @Column(columnDefinition="BOOLEAN DEFAULT TRUE")
+    private Boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
