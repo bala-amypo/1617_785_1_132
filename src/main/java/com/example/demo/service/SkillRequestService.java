@@ -1,7 +1,12 @@
 package com.exmaple.demo.service;
 
-import com.example.demo.model.SkillRequest;
+import java.util.List;
+import com.exmaple.demo.model.SkillRequest;
 
-public class SkillRequestService{
-    
-} 
+public interface SkillRequestService{
+    SkillRequest createRequest(SkillRequest request);
+    SkillRequest updateRequest(Long id,SkillRequest request);
+    SkillRequest getRequestById(Long id);
+    List<SkillRequest> getRequestsByUser(Long userId);
+    void deactivateRequest(Long id);
+}
