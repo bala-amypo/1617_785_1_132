@@ -1,7 +1,7 @@
-package com.exmaple.demo.service;
+package com.example.demo.service;
 
 import java.util.List;
-import com.exmaple.demo.model.MatchRecord;
+import com.example.demo.model.MatchRecord;
 
 public interface MatchmakingService {
     MatchRecord generateMatch(Long userId);
