@@ -14,5 +14,5 @@ public class UserProfileController{
     public UserProfile createuserprofile(@RequestBody UserProfile up){
         return ups.createUser(up);
     }
-    
+
 }

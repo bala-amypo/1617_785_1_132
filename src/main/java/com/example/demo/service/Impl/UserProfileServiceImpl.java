@@ -7,5 +7,10 @@ import com.example.demo.model.UserProfile;
 
 @Service
 public class UserProfileServieImpl implements UserProfileService{
-    @Autowired UserProfileRepository ;
+    @Autowired UserProfileRepository upr;
+    @Override
+    public UserProfile createUser(UserProfile up){
+        return upr.save(str);
+    }
+
 } 
