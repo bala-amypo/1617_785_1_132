@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.model.SkillRequest;
 
 @Repository
-public interface MatchRecordRepository extends JpaRepository<MatchRecord,>{
+public interface SkillRequestRepository extends JpaRepository<MSkillRequest,>{
 
 }
