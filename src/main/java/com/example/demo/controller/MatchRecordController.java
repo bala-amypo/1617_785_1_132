@@ -10,19 +10,19 @@ import com.example.demo.model.MatchRecord;
 @RequestMapping("/matches")
 public class MatchRecordController {
     @Autowired MatchmakingService service;
-    @PostMapping("/POST/generate/{userId}")
+    @PostMapping("/api/matches/POST/generate/{userId}")
     public MatchRecord generate(@PathVariable Long userId) {
         return service.generateMatch(userId);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/api/matches/GET/{id}")
     public MatchRecord getById(@PathVariable Long id) {
         return service.getMatchById(id);
     }
-    @GetMapping("/user/{userId}")
+    @GetMapping("/api/matches/GET/user/{userId}")
     public List<MatchRecord> getForUser(@PathVariable Long userId) {
         return service.getMatchesForUser(userId);
     }
-    @PutMapping("/{id}/status")
+    @PutMapping("/api/matches/PUT/{id}/status")
     public MatchRecord updateStatus(@PathVariable Long id, @RequestParam String status) {
         return service.updateMatchStatus(id, status);
     }
