@@ -18,7 +18,6 @@ public class UserProfile{
     @Column(unique=true)
     private String email;
     private String bio;
-    @Column(columnDefinition="BOOLEAN DEFAULT TRUE")
     private Boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -65,6 +64,7 @@ public class UserProfile{
         this.createdAt=createdAt;
     }
     public UserProfile(){
+        this.active=true;
     }
     public User(Long id, String username, String email, String bio,
                 Boolean active, LocalDateTime createdAt, LocalDateTime updatedAt) {
