@@ -10,7 +10,7 @@ import com.example.demo.model.MatchRecord;
 @RequestMapping("/matches")
 public class MatchRecordController {
     @Autowired MatchmakingService service;
-    @PostMapping("/generate/{userId}")
+    @PostMapping("/POST/generate/{userId}")
     public MatchRecord generate(@PathVariable Long userId) {
         return service.generateMatch(userId);
     }
