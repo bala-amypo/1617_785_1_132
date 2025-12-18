@@ -29,23 +29,38 @@ public class SkillOffer {
         this.availableHoursPerWeek = availableHoursPerWeek;
         this.active = active;
     }
-    public Long getId() { 
+    public Long getId(){ 
         return id; 
     }
-    public User getUser() {
+    public User getUser(){
         return user; 
     }
-    public Skill getSkill() {
-     return skill; }
-    public String getExperienceLevel() { return experienceLevel; }
-    public Integer getAvailableHoursPerWeek() { return availableHoursPerWeek; }
-    public Boolean getActive() { return active; }
-
-    // Setters
-    public void setId(Long id) { this.id = id; }
-    public void setUser(User user) { this.user = user; }
-    public void setSkill(Skill skill) { this.skill = skill; }
-    public void setExperienceLevel(String experienceLevel) { this.experienceLevel = experienceLevel; }
-    public void setAvailableHoursPerWeek(Integer availableHoursPerWeek) { this.availableHoursPerWeek = availableHoursPerWeek; }
+    public Skill getSkill(){
+        return skill; 
+    }
+    public String getExperienceLevel(){
+        return experienceLevel; 
+    }
+    public Integer getAvailableHoursPerWeek(){
+        return availableHoursPerWeek;
+    }
+    public Boolean getActive(){
+        return active;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
+    public void setUser(User user){
+        this.user = user;
+    }
+    public void setSkill(Skill skill){
+        this.skill = skill;
+    }
+    public void setExperienceLevel(String experienceLevel){
+        this.experienceLevel = experienceLevel;
+    }
+    public void setAvailableHoursPerWeek(Integer availableHoursPerWeek){
+        this.availableHoursPerWeek = availableHoursPerWeek;
+    }
     public void setActive(Boolean active) { this.active = active; }
 }
