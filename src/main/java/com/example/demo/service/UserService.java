@@ -1,7 +1,8 @@
 package com.exmaple.demo.service;
 
-import com.example.demo.model.User;
+import com.exmaple.demo.model.User;
 
-public class UserService{
-    
+public interface UserService {
+    User register(User user);
+    User findByEmail(String email);
 }
