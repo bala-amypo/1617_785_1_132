@@ -1,7 +1,7 @@
-package com.exmaple.demo.service;
+package com.example.demo.service;
 
 import java.util.List;
-import com.exmaple.demo.model.SkillRequest;
+import com.example.demo.model.SkillRequest;
 
 public interface SkillRequestService{
     SkillRequest createRequest(SkillRequest request);
