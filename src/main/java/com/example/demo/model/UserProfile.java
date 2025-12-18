@@ -1,8 +1,8 @@
 package com.exmaple.demo.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.persistence.Generated Value;
 import jakarta.persistence.GenerationType;
 import java.time.LocalDateTime;
