@@ -1,10 +1,10 @@
-package com.exmaple.demo.service.impl;
+package com.example.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.exmaple.demo.service.UserService;
-import com.exmaple.demo.repository.UserRepository;
-import com.exmaple.demo.model.User;
+import com.example.demo.service.UserService;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
