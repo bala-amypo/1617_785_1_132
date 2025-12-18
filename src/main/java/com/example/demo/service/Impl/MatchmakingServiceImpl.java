@@ -16,8 +16,7 @@ public class MatchmakingServiceImpl implements MatchmakingService {
     }
     @Override
     public MatchRecord getMatchById(Long id) {
-        return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Match not found"));
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Match not found"));
     }
     @Override
     public List<MatchRecord> getMatchesForUser(Long userId) {
