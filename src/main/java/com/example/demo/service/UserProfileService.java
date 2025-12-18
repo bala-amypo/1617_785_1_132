@@ -1,7 +1,12 @@
 package com.exmaple.demo.service;
 
+import java.util.List;
 import com.example.demo.model.UserProfile;
 
-public class UserProfileService{
-    UserProfile createUser(UserProfile up);
-} 
+public interface UserProfileService{
+    UserProfile createUser(UserProfile user);
+    UserProfile updateUser(Long id,UserProfile user);
+    UserProfile getUserById(Long id);
+    List<UserProfile> getAllUsers();
+    void deactivateUser(Long id);
+}
