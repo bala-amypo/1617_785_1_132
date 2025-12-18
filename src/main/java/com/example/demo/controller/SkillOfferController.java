@@ -14,23 +14,23 @@ import com.example.demo.service.SkillOfferService;
 @RestController
 public class SkillOfferController{
     @Autowired SkillOfferService sos;
-    @PostMapping("/offers")
+    @PostMapping("/api/skill-offers/POST")
     public SkillOffer create(@RequestBody SkillOffer offer){
         return sos.createOffer(offer);
     }
-    @PutMapping("/offers/{id}")
+    @PutMapping("/api/skill-offers/PUT/{id}")
     public SkillOffer update(@PathVariable Long id,@RequestBody SkillOffer offer){
         return sos.updateOffer(id,offer);
     }
-    @GetMapping("/offers/{id}")
+    @GetMapping("/api/skill-offers/GET/{id}")
     public SkillOffer get(@PathVariable Long id){
         return sos.getOfferById(id);
     }
-    @GetMapping("/offers/user/{userId}")
+    @GetMapping("/api/skill-offers/GET/user/{userId}")
     public List<SkillOffer> getByUser(@PathVariable Long userId){
         return sos.getOffersByUser(userId);
     }
-    @PutMapping("/offers/deactivate/{id}")
+    @PutMapping("/api/skill-offers/PUT/{id}/deactivate")
     public void deactivate(@PathVariable Long id){
         sos.deactivateOffer(id);
     }
