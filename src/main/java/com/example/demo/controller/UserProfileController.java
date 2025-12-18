@@ -14,23 +14,23 @@ import com.example.demo.service.UserProfileService;
 @RestController
 public class UserProfileController{
     @Autowired UserProfileService ups;
-    @PostMapping("/POST")
+    @PostMapping("/api/users/POST")
     public UserProfile createUser(@RequestBody UserProfile user){
         return ups.createUser(user);
     }
-    @PutMapping("/PUT/{id}")
+    @PutMapping("/api/users/PUT/{id}")
     public UserProfile updateUser(@PathVariable Long id,@RequestBody UserProfile user){
         return ups.updateUser(id,user);
     }
-    @GetMapping("/GET/{id}")
+    @GetMapping("/api/users/GET/{id}")
     public UserProfile getUser(@PathVariable Long id){
         return ups.getUserById(id);
     }
-    @GetMapping("/GET")
+    @GetMapping("/api/users/GET")
     public List<UserProfile> getAll(){
         return ups.getAllUsers();
     }
-    @PutMapping("/PUT/{id}/deactivate")
+    @PutMapping("/api/users/PUT/{id}/deactivate")
     public void deactivate(@PathVariable Long id){
         ups.deactivateUser(id);
     }
