@@ -9,7 +9,6 @@ import com.example.demo.model.SkillOffer;
 
 @Service
 public class SkillOfferServiceImpl implements SkillOfferService{
-    @Autowired SkillOfferRepository sor;
     private final SkillOfferRepository sor;
     public SkillOffergServiceImpl(SkillOfferRepository sor){
         this.sor=sor;
