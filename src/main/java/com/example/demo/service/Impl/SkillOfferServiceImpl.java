@@ -10,7 +10,7 @@ import com.example.demo.model.SkillOffer;
 @Service
 public class SkillOfferServiceImpl implements SkillOfferService{
     private final SkillOfferRepository sor;
-    public SkillOffergServiceImpl(SkillOfferRepository sor){
+    public SkillOfferServiceImpl(SkillOfferRepository sor){
         this.sor=sor;
     }
     public SkillOffer createOffer(SkillOffer offer){

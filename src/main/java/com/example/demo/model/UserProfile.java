@@ -3,7 +3,7 @@ package com.example.demo.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
-import jakarta.persistence.Generated Value;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.time.LocalDateTime;
 
@@ -66,7 +66,7 @@ public class UserProfile{
     public UserProfile(){
         this.active=true;
     }
-    public User(Long id, String username, String email, String bio,
+    public UserProfile(Long id, String username, String email, String bio,
                 Boolean active, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id=id;
         this.username=username;
