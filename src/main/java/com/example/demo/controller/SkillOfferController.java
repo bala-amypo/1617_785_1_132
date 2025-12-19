@@ -14,7 +14,7 @@ import com.example.demo.service.SkillOfferService;
 @RestController
 public class SkillOfferController{
     private final SkillOfferService sos;
-    public SkillOfferContoller(SkillOfferService sos){
+    public SkillOfferController(SkillOfferService sos){
         this.sos=sos;
     };
     @PostMapping("/api/skill-offers/POST")
