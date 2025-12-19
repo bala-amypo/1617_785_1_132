@@ -13,7 +13,10 @@ import com.example.demo.service.UserProfileService;
 
 @RestController
 public class UserProfileController{
-    @Autowired UserProfileService ups;
+    private final UserProfileService ups;
+    public UserProfileContoller(UserProfileService ups){
+        this.ups=ups;
+    }
     @PostMapping("/api/users/POST")
     public UserProfile createUser(@RequestBody UserProfile user){
         return ups.createUser(user);

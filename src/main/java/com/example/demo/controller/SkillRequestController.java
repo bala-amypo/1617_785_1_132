@@ -9,7 +9,6 @@ import com.example.demo.model.SkillRequest;
 @RestController
 @RequestMapping("/skill-requests")
 public class SkillRequestController {
-    @Autowired SkillRequestService service;
     private final SkillRequestService service;
     public SkillRequestContoller(SkillRequestService service){
         this.service=service;
