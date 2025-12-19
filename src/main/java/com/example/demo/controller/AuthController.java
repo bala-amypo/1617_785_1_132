@@ -9,7 +9,7 @@ import com.example.demo.model.User;
 @RequestMapping("/users")
 public class AuthController {
     private final UserService service;
-    public AuthContoller(UserService service){
+    public AuthController(UserService service){
         this.service=service;
     }
     @PostMapping("/auth/POST/register")
