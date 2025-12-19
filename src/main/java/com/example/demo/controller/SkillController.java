@@ -13,7 +13,7 @@ import com.example.demo.service.SkillService;
 
 @RestController
 public class SkillController{
-    private final UserService ss;
+    private final SkillService ss;
     public SkillController(SkillService ss){
         this.ss=ss;
     }
