@@ -10,7 +10,7 @@ import com.example.demo.model.MatchRecord;
 @RequestMapping("/matches")
 public class MatchRecordController {
     private final MatchmakingService service;
-    public MatchRecordContoller(MatchmakingService service){
+    public MatchRecordController(MatchmakingService service){
         this.service=service;
     }
     @PostMapping("/api/matches/POST/generate/{userId}")
