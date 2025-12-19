@@ -8,7 +8,10 @@ import com.example.demo.model.User;
 @RestController
 @RequestMapping("/users")
 public class AuthController {
-    @Autowired UserService service;
+    private final UserService service;
+    public AuthContoller(UserService service){
+        this.service=service;
+    }
     @PostMapping("/auth/POST/register")
     public User register(@RequestBody User user) {
         return service.register(user);
