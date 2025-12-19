@@ -13,7 +13,10 @@ import com.example.demo.service.SkillService;
 
 @RestController
 public class SkillController{
-    @Autowired SkillService ss;
+    private final UserService ss;
+    public SkillContoller(SkillService ss){
+        this.ss=ss;
+    }
     @PostMapping("/api/skills/POST")
     public Skill create(@RequestBody Skill skill){
         return ss.createSkill(skill);

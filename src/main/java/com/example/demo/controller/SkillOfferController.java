@@ -13,7 +13,10 @@ import com.example.demo.service.SkillOfferService;
 
 @RestController
 public class SkillOfferController{
-    @Autowired SkillOfferService sos;
+    private final SkillOfferService sos;
+    public SkillOfferContoller(SkillOfferService sos){
+        this.sos=sos;
+    };
     @PostMapping("/api/skill-offers/POST")
     public SkillOffer create(@RequestBody SkillOffer offer){
         return sos.createOffer(offer);

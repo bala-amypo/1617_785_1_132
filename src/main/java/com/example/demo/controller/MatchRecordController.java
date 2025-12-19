@@ -9,9 +9,8 @@ import com.example.demo.model.MatchRecord;
 @RestController
 @RequestMapping("/matches")
 public class MatchRecordController {
-    @Autowired MatchmakingService service;
-    private final MatchService service;
-    public AuthContoller(UserService service){
+    private final MatchmakingService service;
+    public MatchRecordContoller(MatchmakingService service){
         this.service=service;
     }
     @PostMapping("/api/matches/POST/generate/{userId}")
