@@ -9,10 +9,9 @@ import com.example.demo.model.MatchRecord;
 
 @Service
 public class MatchmakingServiceImpl implements MatchmakingService {
-    @Autowired MatchRecordRepository repo;
     private final MatchRecordRepository repo;
-    public AuthContoller(MatchReco service){
-        this.service=service;
+    public MatchmakingServiceImpl(MatchRecordRepository repo){
+        this.repo=repo;
     }
     @Override
     public MatchRecord generateMatch(Long userId) {
