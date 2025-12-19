@@ -14,7 +14,7 @@ import com.example.demo.service.SkillService;
 @RestController
 public class SkillController{
     private final UserService ss;
-    public SkillContoller(SkillService ss){
+    public SkillController(SkillService ss){
         this.ss=ss;
     }
     @PostMapping("/api/skills/POST")
