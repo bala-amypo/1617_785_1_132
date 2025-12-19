@@ -9,9 +9,8 @@ import com.example.demo.model.UserProfile;
 
 @Service
 public class UserProfileServiceImpl implements UserProfileService{
-    @Autowired UserProfileRepository upr;
     private final UserProfileRepository upr;
-    public UserProfileServiceImpl(Repository upr){
+    public UserProfileServiceImpl(UserProfileRepository upr){
         this.upr=upr;
     }
     public UserProfile createUser(UserProfile user){
