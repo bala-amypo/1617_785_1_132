@@ -8,7 +8,6 @@ import com.example.demo.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired UserRepository repo;
     private final UserRepository repo;
     public UserServiceImpl(UserRepository repo){
         this.repo=repo;
