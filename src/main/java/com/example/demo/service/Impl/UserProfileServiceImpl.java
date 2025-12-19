@@ -22,10 +22,10 @@ public class UserProfileServiceImpl implements UserProfileService{
     public UserProfile updateUser(Long id,UserProfile user){
         UserProfile existing=upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
 
-        existing.setFullName(user.getFullName());
+        existing.setUsername(user.getFullName());
         existing.setEmail(user.getEmail());
 
-        return upr.save(existing);
+        return upr.save(existing); 
     }
     public UserProfile getUserById(Long id){
         return upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
