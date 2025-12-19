@@ -9,9 +9,8 @@ import com.example.demo.model.SkillRequest;
 
 @Service
 public class SkillRequestServiceImpl implements SkillRequestService {
-    @Autowired SkillRequestRepository repo;
-    private final MatchRecordRepository repo;
-    public MatchmakingServiceImpl(MatchRecordRepository repo){
+    private final SkillRequestRepository repo;
+    public SkillRequestServiceImpl(SkillRequestRepository repo){
         this.repo=repo;
     }
     @Override
