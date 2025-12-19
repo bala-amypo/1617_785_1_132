@@ -14,7 +14,7 @@ import com.example.demo.service.UserProfileService;
 @RestController
 public class UserProfileController{
     private final UserProfileService ups;
-    public UserProfileContoller(UserProfileService ups){
+    public UserProfileController(UserProfileService ups){
         this.ups=ups;
     }
     @PostMapping("/api/users/POST")

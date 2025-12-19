@@ -10,7 +10,7 @@ import com.example.demo.model.SkillRequest;
 @RequestMapping("/skill-requests")
 public class SkillRequestController {
     private final SkillRequestService service;
-    public SkillRequestContoller(SkillRequestService service){
+    public SkillRequestController(SkillRequestService service){
         this.service=service;
     }
     @PostMapping("/api/skill-requests/POST")
