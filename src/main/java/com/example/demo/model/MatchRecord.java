@@ -27,10 +27,10 @@ public class MatchRecord{
     @PrePersist
     public void onMatch(){
         if (this.matchedAt==null){
-            this.matchedAt = LocalDateTime.now();
+            this.matchedAt=LocalDateTime.now();
         }
-        if (this.status == null) {
-            this.status = "PENDING";
+        if (this.status==null){
+            this.status="PENDING";
         }
     }
     public Long getId(){
