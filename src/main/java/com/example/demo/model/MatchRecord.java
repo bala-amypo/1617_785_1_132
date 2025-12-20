@@ -24,10 +24,13 @@ public class MatchRecord{
     private LocalDateTime matchedAt;
     private String status;
     @PrePersist
-    public void Oncreate(){
-        LocalDateTime now=LocalDateTime.now();
-        if(this.matchedAt==null){
-            this.matchedAt=now;
+    @PrePersist
+    public void onMatch(){
+        if (this.matchedAt==null){
+            this.matchedAt = LocalDateTime.now();
+        }
+        if (this.status == null) {
+            this.status = "PENDING";
         }
     }
     public Long getId(){
