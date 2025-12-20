@@ -24,7 +24,6 @@ public class MatchRecord{
     private LocalDateTime matchedAt;
     private String status;
     @PrePersist
-    @PrePersist
     public void onMatch(){
         if (this.matchedAt==null){
             this.matchedAt=LocalDateTime.now();
