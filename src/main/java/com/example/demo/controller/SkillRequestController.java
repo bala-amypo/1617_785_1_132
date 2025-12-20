@@ -24,7 +24,7 @@ public class SkillRequestController {
     public List<SkillRequest> getByUser(@PathVariable Long userId) {
         return service.getRequestsByUser(userId);
     }
-    @PutMapping("/api/skill-requests/GET/user/{userid}")
+    @PutMapping("/api/skill-requests/PUT/{id}")
     public SkillRequest update(@PathVariable Long id, @RequestBody SkillRequest request) {
         return service.updateRequest(id, request);
     }
