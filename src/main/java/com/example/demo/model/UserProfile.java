@@ -33,7 +33,8 @@ public class UserProfile{
     }
     @PreUpdate
     public void Onupdate(){
-    
+        LocalDateTime now=LocalDateTime.now();
+    }
     public Long getId(){
         return id;
     }
