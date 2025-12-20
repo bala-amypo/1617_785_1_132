@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
 
@@ -21,6 +23,8 @@ public class UserProfile{
     private Boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    @PrePersist
+    
     public Long getId(){
         return id;
     }
