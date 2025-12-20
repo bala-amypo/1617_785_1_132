@@ -7,7 +7,6 @@ import com.example.demo.service.SkillRequestService;
 import com.example.demo.model.SkillRequest;
 
 @RestController
-@RequestMapping("/skill-requests")
 public class SkillRequestController {
     private final SkillRequestService service;
     public SkillRequestController(SkillRequestService service){
