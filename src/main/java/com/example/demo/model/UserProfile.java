@@ -25,8 +25,15 @@ public class UserProfile{
     private LocalDateTime updatedAt;
     @PrePersist
     public void Oncreate(){
-        LocalD
+        LocalDateTime now=LocalDateTime.now();
+        if(this.createAt==null){
+            this.createdAt=now;
+        }
+        this.updatedAt=now;
     }
+    @PreUpdate
+    public void Onupdate(){
+    
     public Long getId(){
         return id;
     }
