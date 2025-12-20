@@ -26,7 +26,7 @@ public class UserProfile{
     @PrePersist
     public void Oncreate(){
         LocalDateTime now=LocalDateTime.now();
-        if(this.createAt==null){
+        if(this.createdAt==null){
             this.createdAt=now;
         }
         this.updatedAt=now;
