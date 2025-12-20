@@ -24,7 +24,9 @@ public class UserProfile{
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     @PrePersist
-    
+    public void Oncreate(){
+        LocalD
+    }
     public Long getId(){
         return id;
     }
