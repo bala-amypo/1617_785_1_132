@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
 import java.time.LocalDateTime;
 
 @Entity
@@ -22,13 +23,12 @@ public class MatchRecord{
     private Skill skillOfferedByB;
     private LocalDateTime matchedAt;
     private String status;
-     @PrePersist
+    @PrePersist
     public void Oncreate(){
         LocalDateTime now=LocalDateTime.now();
         if(this.matchedAt==null){
             this.matchedAt=now;
         }
-        this.updatedAt=now;
     }
     public Long getId(){
         return id;
