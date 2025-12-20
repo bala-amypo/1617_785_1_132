@@ -16,11 +16,11 @@ public class SkillRequestController {
     public SkillRequest create(@RequestBody SkillRequest request) {
         return service.createRequest(request);
     }
-    @GetMapping("/api/skill-requests/PUT/{id}")
+    @GetMapping("/api/skill-requests/GET/{id}")
     public SkillRequest getById(@PathVariable Long id) {
         return service.getRequestById(id);
     }
-    @GetMapping("/api/skill-requests/GET/{Id}")
+    @GetMapping("/api/skill-requests/GET/user/{userId}")
     public List<SkillRequest> getByUser(@PathVariable Long userId) {
         return service.getRequestsByUser(userId);
     }
