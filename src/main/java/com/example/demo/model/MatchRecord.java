@@ -22,6 +22,14 @@ public class MatchRecord{
     private Skill skillOfferedByB;
     private LocalDateTime matchedAt;
     private String status;
+     @PrePersist
+    public void Oncreate(){
+        LocalDateTime now=LocalDateTime.now();
+        if(this.matchedAt==null){
+            this.matchedAt=now;
+        }
+        this.updatedAt=now;
+    }
     public Long getId(){
         return id;
     }
