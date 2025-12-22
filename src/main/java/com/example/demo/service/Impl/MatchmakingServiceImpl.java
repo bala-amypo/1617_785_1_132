@@ -15,7 +15,15 @@ public class MatchmakingServiceImpl implements MatchmakingService {
     }
     @Override
     public MatchRecord generateMatch(Long userId) {
-        throw new RuntimeException("No match found");
+        return repo.findFirstByUserAIdOrUserBId(userId, userId)
+                .orElseGet(() -> {MatchRecord match = new MatchRecord();
+                UserProfile user = new UserProfile();
+                user.setId(userId);
+                match.setUserA(user);
+                match.setUserB(null);
+                match.setStatus("PENDING");
+return repo.save(match);
+                });
     }
     @Override
     public MatchRecord getMatchById(Long id) {
