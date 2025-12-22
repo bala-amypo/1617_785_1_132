@@ -22,7 +22,7 @@ public class MatchmakingServiceImpl implements MatchmakingService {
                 match.setUserA(user);
                 match.setUserB(null);
                 match.setStatus("PENDING");
-return repo.save(match);
+                return repo.save(match);
                 });
     }
     @Override
