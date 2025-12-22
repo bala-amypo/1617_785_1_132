@@ -8,7 +8,7 @@ import com.example.demo.model.User;
 public class AuthController {
 
     private final UserService service;
-
+ 
     public AuthController(UserService service) {
         this.service = service;
     }
