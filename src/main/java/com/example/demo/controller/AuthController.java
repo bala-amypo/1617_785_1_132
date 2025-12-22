@@ -22,4 +22,4 @@ public class AuthController {
     public User login(@RequestParam String email) {
         return service.findByEmail(email);
     }
-}
+} 
