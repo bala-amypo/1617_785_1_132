@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repo;
     public UserServiceImpl(UserRepository repo){
         this.repo=repo;
-    }
+    }  
     @Override
     public User register(User user) {
         if (repo.findByEmail(user.getEmail()).isPresent()) {
