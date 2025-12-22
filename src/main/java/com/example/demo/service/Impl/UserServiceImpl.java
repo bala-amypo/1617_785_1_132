@@ -13,13 +13,6 @@ public class UserServiceImpl implements UserService {
         this.repo=repo;
     } 
     @Override
-    public User register(User user) {
-        if (repo.findByEmail(user.getEmail()).isPresent()) {
-            throw new RuntimeException("Email already exists");
-        }
-        return repo.save(user);
-    }
-    @Override
     public User findByEmail(String email) {
         return repo.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
     }
