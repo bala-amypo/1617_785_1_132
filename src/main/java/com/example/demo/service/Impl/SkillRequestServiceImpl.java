@@ -21,19 +21,19 @@ public class SkillRequestServiceImpl implements SkillRequestService {
     }
     @Override
     public SkillRequest updateRequest(Long id, SkillRequest request) {
-        SkillRequest existing = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Request not found"));
+        SkillRequest existing = repo.findById(id).orElseThrow(() -> new RuntimeException("Request not found"));
         existing.setSkill(request.getSkill());
         existing.setActive(request.getActive());
         return repo.save(existing);
     }
-    // @Override
-    // public SkillRequest getRequestById(Long id) {
-    //     return repo.findById(id).orElseThrow(() -> new RuntimeException("Request not found"));
-    // }
+    @Override
     public SkillRequest getRequestById(Long id) {
-    return repo.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Request not found with id " + id));
-}
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Request not found"));
+    }
+//     public SkillRequest getRequestById(Long id) {
+//     return repo.findById(id)
+//             .orElseThrow(() -> new ResourceNotFoundException("Request not found with id " + id));
+// }
 
     @Override
     public List<SkillRequest> getRequestsByUser(Long userId) {

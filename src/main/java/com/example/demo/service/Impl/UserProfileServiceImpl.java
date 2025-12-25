@@ -16,40 +16,40 @@ public class UserProfileServiceImpl implements UserProfileService{
     public UserProfileServiceImpl(UserProfileRepository upr){
         this.upr=upr;
     }
-    // public UserProfile createUser(UserProfile user){
-    //     if(upr.existsByEmail(user.getEmail())){
-    //         throw new RuntimeException("Email already exists");
-    //     }
-    //     return upr.save(user);
-    // }
-    public UserProfile createUser(UserProfile user) {
-    if (upr.existsByEmail(user.getEmail())) {
-        throw new DuplicateResourceException("Email already exists");
+    public UserProfile createUser(UserProfile user){
+        if(upr.existsByEmail(user.getEmail())){
+            throw new RuntimeException("Email already exists");
+        }
+        return upr.save(user);
     }
-    return upr.save(user);
-}
+//     public UserProfile createUser(UserProfile user) {
+//     if (upr.existsByEmail(user.getEmail())) {
+//         throw new DuplicateResourceException("Email already exists");
+//     }
+//     return upr.save(user);
+// }
 
-public UserProfile getUserById(Long id) {
-    return upr.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("UserProfile not found with id " + id));
-}
+// public UserProfile getUserById(Long id) {
+//     return upr.findById(id)
+//             .orElseThrow(() -> new ResourceNotFoundException("UserProfile not found with id " + id));
+// }
 
     public UserProfile updateUser(Long id,UserProfile user){
-        UserProfile existing=upr.findById(id).orElseThrow(()->new ResourceNotFoundException("UserProfile not found"));
+        UserProfile existing=upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
 
         existing.setUsername(user.getUsername());
         existing.setEmail(user.getEmail());
 
         return upr.save(existing); 
     }
-    // public UserProfile getUserById(Long id){
-    //     return upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
-    // }
+    public UserProfile getUserById(Long id){
+        return upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
+    }
     public List<UserProfile> getAllUsers(){
         return upr.findAll();
     }
     public void deactivateUser(Long id){
-        UserProfile user=upr.findById(id).orElseThrow(()->new ResourceNotFoundException("UserProfile not found"));
+        UserProfile user=upr.findById(id).orElseThrow(()->new RuntimeException("UserProfile not found"));
         user.setActive(false);
         upr.save(user);
     }

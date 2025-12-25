@@ -14,17 +14,17 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository repo){
         this.repo=repo;
     } 
-    // @Override
-    // public User findByEmail(String email) {
-    //     return repo.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
-    // }
+    @Override
+    public User findByEmail(String email) {
+        return repo.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
+    }
     @Override
 public User register(User user) {
     return repo.save(user);
 }
-    @Override
-public User findByEmail(String email) {
-    return repo.findByEmail(email)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found with email " + email));
-}
+//     @Override
+// public User findByEmail(String email) {
+//     return repo.findByEmail(email)
+//             .orElseThrow(() -> new ResourceNotFoundException("User not found with email " + email));
+// }
 }
