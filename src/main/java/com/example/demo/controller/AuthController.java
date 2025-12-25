@@ -24,28 +24,28 @@
 //         return service.findByEmail(email);
 //     }
 // }
-// package com.example.demo.controller;
+package com.example.demo.controller;
 
-// import org.springframework.web.bind.annotation.*;
-// import com.example.demo.service.UserService;
-// import com.example.demo.model.User;
+import org.springframework.web.bind.annotation.*;
+import com.example.demo.service.UserService;
+import com.example.demo.model.User;
 
-// @RestController
-// public class AuthController {
+@RestController
+public class AuthController {
 
-//     private final UserService service;
+    private final UserService service;
  
-//     public AuthController(UserService service) {
-//         this.service = service;
-//     }
+    public AuthController(UserService service) {
+        this.service = service;
+    }
 
-//     @PostMapping("/auth/POST/register")
-//     public User register(@RequestBody User user) {
-//         return service.register(user);
-//     }
+    @PostMapping("/auth/POST/register")
+    public User register(@RequestBody User user) {
+        return service.register(user);
+    }
 
-//     @PostMapping("/auth/POST/login")
-//     public User login(@RequestParam String email) {
-//         return service.findByEmail(email);
-//     }
-// } 
+    @PostMapping("/auth/POST/login")
+    public User login(@RequestParam String email) {
+        return service.findByEmail(email);
+    }
+} 
