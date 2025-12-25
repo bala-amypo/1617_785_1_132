@@ -13,35 +13,30 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleNotFound(ResourceNotFoundException ex) {
-        return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    public ResponseEntity<String> handleNotFound(ResourceNotFoundException ex) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(ex.getMessage());
     }
 
     @ExceptionHandler(DuplicateResourceException.class)
-    public ResponseEntity<Map<String, Object>> handleDuplicate(DuplicateResourceException ex) {
-        return buildResponse(HttpStatus.CONFLICT, ex.getMessage());
+    public ResponseEntity<String> handleDuplicate(DuplicateResourceException ex) {
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(ex.getMessage());
     }
 
     @ExceptionHandler(MatchNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleMatchNotFound(MatchNotFoundException ex) {
-        return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    public ResponseEntity<String> handleMatchNotFound(MatchNotFoundException ex) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(ex.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, Object>> handleGeneric(Exception ex) {
-        return buildResponse(
-                HttpStatus.INTERNAL_SERVER_ERROR,
-                "Internal server error"
-        );
-    }
-
-    private ResponseEntity<Map<String, Object>> buildResponse(HttpStatus status, String message) {
-        Map<String, Object> body = new HashMap<>();
-        body.put("timestamp", LocalDateTime.now());
-        body.put("status", status.value());
-        body.put("error", status.getReasonPhrase());
-        body.put("message", message);
-
-        return new ResponseEntity<>(body, status);
+    public ResponseEntity<String> handleGeneric(Exception ex) {
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("Something went wrong");
     }
 }
