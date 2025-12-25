@@ -37,13 +37,13 @@ public SkillOffer updateOffer(Long id, SkillOffer offer) {
 }
 
     public SkillOffer getOfferById(Long id){
-        return sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        return sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
     }
     public List<SkillOffer> getOffersByUser(Long userId){
         return sor.findByUserId(userId);
     }
     public void deactivateOffer(Long id){
-        SkillOffer offer=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        SkillOffer offer=sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
         offer.setActive(false);
         sor.save(offer);
     }

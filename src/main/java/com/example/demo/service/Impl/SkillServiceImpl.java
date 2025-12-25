@@ -17,7 +17,7 @@ public class SkillServiceImpl implements SkillService{
         return sr.save(skill);
     }
     public Skill updateSkill(Long id,Skill skill){
-        Skill existing=sr.findById(id).orElseThrow(()->new ResourceNotFOundException("Skill not found"));
+        Skill existing=sr.findById(id).orElseThrow(()->new ResourceNotFoundException("Skill not found"));
         existing.setName(skill.getName());
         existing.setCategory(skill.getCategory());
         existing.setDescription(skill.getDescription());
