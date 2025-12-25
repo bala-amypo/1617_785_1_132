@@ -7,6 +7,7 @@ import com.example.demo.service.UserProfileService;
 import com.example.demo.repository.UserProfileRepository;
 import com.example.demo.model.UserProfile;
 import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.exception.DuplicateResourceException;
 
 
 @Service
@@ -48,7 +49,7 @@ public UserProfile getUserById(Long id) {
         return upr.findAll();
     }
     public void deactivateUser(Long id){
-        UserProfile user=upr.findById(id).orElseThrow(()->new ResourceNotFound("UserProfile not found"));
+        UserProfile user=upr.findById(id).orElseThrow(()->new ResourceNotFoundException("UserProfile not found"));
         user.setActive(false);
         upr.save(user);
     }
