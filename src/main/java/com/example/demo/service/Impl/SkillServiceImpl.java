@@ -6,6 +6,8 @@ import java.util.List;
 import com.example.demo.service.SkillService;
 import com.example.demo.repository.SkillRepository;
 import com.example.demo.model.Skill;
+import com.example.demo.exception.ResourceNotFoundException;
+
 
 @Service
 public class SkillServiceImpl implements SkillService{

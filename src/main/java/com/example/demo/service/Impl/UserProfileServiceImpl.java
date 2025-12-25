@@ -6,6 +6,8 @@ import java.util.List;
 import com.example.demo.service.UserProfileService;
 import com.example.demo.repository.UserProfileRepository;
 import com.example.demo.model.UserProfile;
+import com.example.demo.exception.ResourceNotFoundException;
+
 
 @Service
 public class UserProfileServiceImpl implements UserProfileService{

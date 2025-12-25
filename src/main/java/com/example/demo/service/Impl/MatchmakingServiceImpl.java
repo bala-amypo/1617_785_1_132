@@ -6,6 +6,8 @@ import java.util.List;
 import com.example.demo.service.MatchmakingService;
 import com.example.demo.repository.MatchRecordRepository;
 import com.example.demo.model.MatchRecord;
+import com.example.demo.exception.MatchNotFoundException;
+
 
 @Service
 public class MatchmakingServiceImpl implements MatchmakingService {
