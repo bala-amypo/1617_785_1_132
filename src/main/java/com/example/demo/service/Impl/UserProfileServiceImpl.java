@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.UserProfile;
+import com.example.demo.exception.EmailAlreadyExistsException;
 import com.example.demo.repository.UserProfileRepository;
 import com.example.demo.service.UserProfileService;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class UserProfileServiceImpl implements UserProfileService {
         repo.findAll().stream()
             .filter(u -> u.getEmail().equals(user.getEmail()))
             .findFirst()
-            .ifPresent(u -> { throw new RuntimeException("Email already exists"); });
+            .ifPresent(u -> { throw new EmailAlreadyExistsException("Email already exists"); });
         return repo.save(user);
     }
 
