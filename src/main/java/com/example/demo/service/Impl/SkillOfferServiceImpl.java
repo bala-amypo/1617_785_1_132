@@ -18,34 +18,34 @@ public class SkillOfferServiceImpl implements SkillOfferService{
     public SkillOffer createOffer(SkillOffer offer){
         return sor.save(offer);
     }
-    // public SkillOffer updateOffer(Long id,SkillOffer offer){
-    //     SkillOffer existing=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
-    //     existing.setExperienceLevel(offer.getExperienceLevel());
-    //     existing.setAvailableHoursPerWeek(offer.getAvailableHoursPerWeek());
-    //     return sor.save(existing);
-    // }
-    @Override
-public SkillOffer updateOffer(Long id, SkillOffer offer) {
-    SkillOffer existing = sor.findById(id)
-            .orElseThrow(() ->
-                    new ResourceNotFoundException("Offer not found with id " + id)
-            );
+    public SkillOffer updateOffer(Long id,SkillOffer offer){
+        SkillOffer existing=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        existing.setExperienceLevel(offer.getExperienceLevel());
+        existing.setAvailableHoursPerWeek(offer.getAvailableHoursPerWeek());
+        return sor.save(existing);
+    }
+//     @Override
+// public SkillOffer updateOffer(Long id, SkillOffer offer) {
+//     SkillOffer existing = sor.findById(id)
+//             .orElseThrow(() ->
+//                     new ResourceNotFoundException("Offer not found with id " + id)
+//             );
 
-    existing.setExperienceLevel(offer.getExperienceLevel());
-    existing.setAvailableHoursPerWeek(offer.getAvailableHoursPerWeek());
-    existing.setActive(offer.getActive());
+//     existing.setExperienceLevel(offer.getExperienceLevel());
+//     existing.setAvailableHoursPerWeek(offer.getAvailableHoursPerWeek());
+//     existing.setActive(offer.getActive());
 
-    return sor.save(existing);
-}
+//     return sor.save(existing);
+// }
 
     public SkillOffer getOfferById(Long id){
-        return sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
+        return sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
     }
     public List<SkillOffer> getOffersByUser(Long userId){
         return sor.findByUserId(userId);
     }
     public void deactivateOffer(Long id){
-        SkillOffer offer=sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
+        SkillOffer offer=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
         offer.setActive(false);
         sor.save(offer);
     }

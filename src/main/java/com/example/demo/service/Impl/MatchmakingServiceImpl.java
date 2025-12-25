@@ -15,24 +15,24 @@ public class MatchmakingServiceImpl implements MatchmakingService {
     public MatchmakingServiceImpl(MatchRecordRepository repo){
         this.repo=repo;
     }
-    // @Override
-    // public MatchRecord generateMatch(Long userId) {
-    //     throw new RuntimeException("No match found");
-    // }
-    // @Override
-    // public MatchRecord getMatchById(Long id) {
-    //     return repo.findById(id).orElseThrow(() -> new RuntimeException("Match not found"));
-    // }
     @Override
-public MatchRecord generateMatch(Long userId) {
-    throw new MatchNotFoundException("No match found for user " + userId);
-}
+    public MatchRecord generateMatch(Long userId) {
+        throw new RuntimeException("No match found");
+    }
+    @Override
+    public MatchRecord getMatchById(Long id) {
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Match not found"));
+    }
+//     @Override
+// public MatchRecord generateMatch(Long userId) {
+//     throw new MatchNotFoundException("No match found for user " + userId);
+// }
 
-@Override
-public MatchRecord getMatchById(Long id) {
-    return repo.findById(id)
-            .orElseThrow(() -> new MatchNotFoundException("Match not found with id " + id));
-}
+// @Override
+// public MatchRecord getMatchById(Long id) {
+//     return repo.findById(id)
+//             .orElseThrow(() -> new MatchNotFoundException("Match not found with id " + id));
+// }
 
     @Override
     public List<MatchRecord> getMatchesForUser(Long userId) {
