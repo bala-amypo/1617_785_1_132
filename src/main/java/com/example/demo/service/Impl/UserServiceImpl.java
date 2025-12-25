@@ -21,4 +21,4 @@ public User findByEmail(String email) {
     return repo.findByEmail(email)
             .orElseThrow(() -> new ResourceNotFoundException("User not found with email " + email));
 }
- 
+}
