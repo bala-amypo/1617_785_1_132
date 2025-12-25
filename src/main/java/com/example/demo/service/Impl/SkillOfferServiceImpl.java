@@ -74,7 +74,7 @@ public class SkillOfferServiceImpl implements SkillOfferService{
         return sor.save(offer);
     }
     public SkillOffer updateOffer(Long id,SkillOffer offer){
-        SkillOffer existing=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        SkillOffer existing=sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
         existing.setExperienceLevel(offer.getExperienceLevel());
         existing.setAvailableHoursPerWeek(offer.getAvailableHoursPerWeek());
         return sor.save(existing);
@@ -94,13 +94,13 @@ public class SkillOfferServiceImpl implements SkillOfferService{
 // }
 
     public SkillOffer getOfferById(Long id){
-        return sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        return sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
     }
     public List<SkillOffer> getOffersByUser(Long userId){
         return sor.findByUserId(userId);
     }
     public void deactivateOffer(Long id){
-        SkillOffer offer=sor.findById(id).orElseThrow(()->new RuntimeException("Offer not found"));
+        SkillOffer offer=sor.findById(id).orElseThrow(()->new ResourceNotFoundException("Offer not found"));
         offer.setActive(false);
         sor.save(offer);
     }
