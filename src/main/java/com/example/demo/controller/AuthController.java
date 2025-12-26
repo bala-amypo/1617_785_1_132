@@ -15,7 +15,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) throws Exception {
+    public User register(@Valid @RequestBody User user) throws Exception {
         return service.register(user);
     }
 
