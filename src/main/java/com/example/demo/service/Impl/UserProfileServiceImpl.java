@@ -53,3 +53,36 @@
 //         repo.save(existing);
 //     }
 // }
+package com.example.demo.service.impl;
+
+import com.example.demo.model.UserProfile;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.service.UserProfileService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserProfileServiceImpl implements UserProfileService {
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Override
+    public UserProfile createUser(UserProfile userProfile) {
+        return userRepository.save(userProfile);
+    }
+    
+    @Override
+    public UserProfile getUserById(Long id) {
+        return userRepository.findById(id);
+    }
+    
+    @Override
+    public void deactivateUser(Long id) {
+        UserProfile user = getUserById(id);
+        if (user != null) {
+            user.setActive(false);
+            userRepository.save(user);
+        }
+    }
+}
