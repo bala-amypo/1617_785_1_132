@@ -19,7 +19,7 @@ public class UserProfile {
     @Size(min = 3)
     private String fullName;
 
-    @Email
+    @Email(message="Invalid Email")
     @NotBlank
     private String email;
 

@@ -18,7 +18,7 @@ public class User {
     @Size(min = 3)
     private String fullName;
 
-    @Email
+    @Email(message="Invalid email")
     @NotBlank
     private String email;
 
