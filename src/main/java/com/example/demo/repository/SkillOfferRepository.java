@@ -11,3 +11,15 @@
 //     List<SkillOffer> findBySkillIdAndActiveTrue(Long skillId);
 // }
 
+package com.example.demo.repository;
+
+import com.example.demo.model.SkillOffer;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface SkillOfferRepository {
+    SkillOffer save(SkillOffer skillOffer);
+    SkillOffer findById(Long id);
+    List<SkillOffer> findByUserId(Long userId);
+}
