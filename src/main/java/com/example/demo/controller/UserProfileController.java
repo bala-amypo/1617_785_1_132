@@ -18,12 +18,12 @@ public class UserProfileController {
     }
 
     @PostMapping
-    public UserProfile createUser(@RequestBody UserProfile user) throws Exception {
+    public UserProfile createUser(@Valid @RequestBody UserProfile user) throws Exception {
         return service.createUser(user);
     }
 
     @PutMapping("/{id}")
-    public UserProfile updateUser(@PathVariable Long id, @RequestBody UserProfile user) throws Exception {
+    public UserProfile updateUser(@PathVariable Long id,@Valid  @RequestBody UserProfile user) throws Exception {
         return service.updateUser(id, user);
     }
 

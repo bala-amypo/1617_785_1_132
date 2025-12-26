@@ -23,12 +23,12 @@ public class SkillController {
     }
 
     @PutMapping("/{id}")
-    public Skill updateSkill(@PathVariable Long id, @RequestBody Skill skill) throws Exception {
+    public Skill updateSkill(@PathVariable Long id,@Valid  @RequestBody Skill skill) throws Exception {
         return service.updateSkill(id, skill);
     }
 
     @GetMapping("/{id}")
-    public Skill getSkillById(@Valid @PathVariable Long id) throws Exception {
+    public Skill getSkillById( @PathVariable Long id) throws Exception {
         return service.getSkillById(id);
     }
 
@@ -38,7 +38,7 @@ public class SkillController {
     }
 
     @PutMapping("/{id}/deactivate")
-    public void deactivateSkill@Valid (@PathVariable Long id) throws Exception {
+    public void deactivateSkill(@PathVariable Long id) throws Exception {
         service.deactivateSkill(id);
     }
 }

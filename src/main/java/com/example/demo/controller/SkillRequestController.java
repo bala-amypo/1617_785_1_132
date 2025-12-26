@@ -18,12 +18,12 @@ public class SkillRequestController {
     }
 
     @PostMapping
-    public SkillRequest createRequest(@RequestBody SkillRequest request) {
+    public SkillRequest createRequest(@Valid @RequestBody SkillRequest request) {
         return service.createRequest(request);
     }
 
     @PutMapping("/{id}")
-    public SkillRequest updateRequest(@PathVariable Long id, @RequestBody SkillRequest request) throws Exception {
+    public SkillRequest updateRequest(@PathVariable Long id,@Valid  @RequestBody SkillRequest request) throws Exception {
         return service.updateRequest(id, request);
     }
 

@@ -18,12 +18,12 @@ public class SkillOfferController {
     }
 
     @PostMapping
-    public SkillOffer createOffer(@RequestBody SkillOffer offer) {
+    public SkillOffer createOffer(@Valid @RequestBody SkillOffer offer) {
         return service.createOffer(offer);
     }
 
     @PutMapping("/{id}")
-    public SkillOffer updateOffer(@PathVariable Long id, @RequestBody SkillOffer offer) throws Exception {
+    public SkillOffer updateOffer(@PathVariable Long id,@Valid  @RequestBody SkillOffer offer) throws Exception {
         return service.updateOffer(id, offer);
     }
 
