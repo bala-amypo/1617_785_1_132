@@ -1,9 +1,9 @@
-package com.example.demo.service;
+// package com.example.demo.service;
 
-import com.example.demo.model.User;
+// import com.example.demo.model.User;
 
-public interface UserService {
-    User register(User user) throws Exception;
-    User findByEmail(String email) throws Exception;
-}
+// public interface UserService {
+//     User register(User user) throws Exception;
+//     User findByEmail(String email) throws Exception;
+// }
 

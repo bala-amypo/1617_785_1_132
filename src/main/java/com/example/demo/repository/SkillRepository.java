@@ -1,12 +1,12 @@
-package com.example.demo.repository;
+// package com.example.demo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.demo.model.Skill;
+// import org.springframework.data.jpa.repository.JpaRepository;
+// import com.example.demo.model.Skill;
 
-import java.util.Optional;
-import org.springframework.stereotype.Repository;
+// import java.util.Optional;
+// import org.springframework.stereotype.Repository;
 
-@Repository
-public interface SkillRepository extends JpaRepository<Skill, Long> {
-    Optional<Skill> findByName(String name);
-}
+// @Repository
+// public interface SkillRepository extends JpaRepository<Skill, Long> {
+//     Optional<Skill> findByName(String name);
+// }
