@@ -76,10 +76,10 @@ public class GlobalExceptionHandler {
                 .body(ex.getMessage());
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleGeneric(Exception ex) {
-        return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Something went wrong");
-    }
+    // @ExceptionHandler(Exception.class)
+    // public ResponseEntity<String> handleGeneric(Exception ex) {
+    //     return ResponseEntity
+    //             .status(HttpStatus.INTERNAL_SERVER_ERROR)
+    //             .body("Something went wrong");
+    // }
 }
