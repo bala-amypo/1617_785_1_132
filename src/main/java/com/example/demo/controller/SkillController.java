@@ -4,6 +4,8 @@ import com.example.demo.model.Skill;
 import com.example.demo.service.SkillService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/skills")
@@ -16,7 +18,7 @@ public class SkillController {
     }
 
     @PostMapping
-    public Skill createSkill(@RequestBody Skill skill) throws Exception {
+    public Skill createSkill(@Valid @RequestBody Skill skill) throws Exception {
         return service.createSkill(skill);
     }
 
@@ -26,7 +28,7 @@ public class SkillController {
     }
 
     @GetMapping("/{id}")
-    public Skill getSkillById(@PathVariable Long id) throws Exception {
+    public Skill getSkillById(@Valid @PathVariable Long id) throws Exception {
         return service.getSkillById(id);
     }
 
@@ -36,7 +38,7 @@ public class SkillController {
     }
 
     @PutMapping("/{id}/deactivate")
-    public void deactivateSkill(@PathVariable Long id) throws Exception {
+    public void deactivateSkill@Valid (@PathVariable Long id) throws Exception {
         service.deactivateSkill(id);
     }
 }

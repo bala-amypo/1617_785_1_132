@@ -4,6 +4,8 @@ import com.example.demo.model.MatchRecord;
 import com.example.demo.service.MatchmakingService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/matches")
@@ -16,22 +18,22 @@ public class MatchRecordController {
     }
 
     @PostMapping("/generate/{userId}")
-    public MatchRecord generateMatch(@PathVariable Long userId) throws Exception {
+    public MatchRecord generateMatch(@Valid @PathVariable Long userId) throws Exception {
         return service.generateMatch(userId);
     }
 
     @GetMapping("/{id}")
-    public MatchRecord getMatchById(@PathVariable Long id) throws Exception {
+    public MatchRecord getMatchById(@Valid @PathVariable Long id) throws Exception {
         return service.getMatchById(id);
     }
 
     @GetMapping("/user/{userId}")
-    public List<MatchRecord> getMatchesForUser(@PathVariable Long userId) {
+    public List<MatchRecord> getMatchesForUser(@Valid @PathVariable Long userId) {
         return service.getMatchesForUser(userId);
     }
 
     @PutMapping("/{id}/status")
-    public MatchRecord updateMatchStatus(@PathVariable Long id, @RequestParam String status) throws Exception {
+    public MatchRecord updateMatchStatus(@Valid @PathVariable Long id, @RequestParam String status) throws Exception {
         return service.updateMatchStatus(id, status);
     }
 }

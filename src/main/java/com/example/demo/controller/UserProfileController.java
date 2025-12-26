@@ -4,6 +4,8 @@ import com.example.demo.model.UserProfile;
 import com.example.demo.service.UserProfileService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/users")
