@@ -42,3 +42,29 @@
 //         service.deactivateRequest(id);
 //     }
 // }
+package com.example.demo.controller;
+
+import com.example.demo.model.SkillRequest;
+import com.example.demo.service.SkillRequestService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class SkillRequestController {
+    
+    @Autowired
+    private SkillRequestService skillRequestService;
+    
+    @PostMapping("/requests")
+    public ResponseEntity<SkillRequest> create(@RequestBody SkillRequest skillRequest) {
+        SkillRequest created = skillRequestService.createRequest(skillRequest);
+        return ResponseEntity.ok(created);
+    }
+    
+    @GetMapping("/requests/{id}")
+    public ResponseEntity<SkillRequest> get(@PathVariable Long id) {
+        SkillRequest request = skillRequestService.getRequestById(id);
+        return ResponseEntity.ok(request);
+    }
+}
