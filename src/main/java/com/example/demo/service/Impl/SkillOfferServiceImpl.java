@@ -53,3 +53,33 @@
 //         repo.save(existing);
 //     }
 // }
+package com.example.demo.service.impl;
+
+import com.example.demo.model.SkillOffer;
+import com.example.demo.repository.SkillOfferRepository;
+import com.example.demo.service.SkillOfferService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class SkillOfferServiceImpl implements SkillOfferService {
+    
+    @Autowired
+    private SkillOfferRepository skillOfferRepository;
+    
+    @Override
+    public SkillOffer createOffer(SkillOffer skillOffer) {
+        return skillOfferRepository.save(skillOffer);
+    }
+    
+    @Override
+    public SkillOffer getOfferById(Long id) {
+        return skillOfferRepository.findById(id);
+    }
+    
+    @Override
+    public List<SkillOffer> getOffersByUser(Long userId) {
+        return skillOfferRepository.findByUserId(userId);
+    }
+}
