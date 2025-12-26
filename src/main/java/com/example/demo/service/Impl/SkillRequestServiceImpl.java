@@ -52,33 +52,3 @@
 //         repo.save(existing);
 //     }
 // }
-package com.example.demo.service.impl;
-
-import com.example.demo.model.SkillRequest;
-import com.example.demo.repository.SkillRequestRepository;
-import com.example.demo.service.SkillRequestService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import java.util.List;
-
-@Service
-public class SkillRequestServiceImpl implements SkillRequestService {
-    
-    @Autowired
-    private SkillRequestRepository skillRequestRepository;
-    
-    @Override
-    public SkillRequest createRequest(SkillRequest skillRequest) {
-        return skillRequestRepository.save(skillRequest);
-    }
-    
-    @Override
-    public SkillRequest getRequestById(Long id) {
-        return skillRequestRepository.findById(id);
-    }
-    
-    @Override
-    public List<SkillRequest> getRequestsByUser(Long userId) {
-        return skillRequestRepository.findByUserId(userId);
-    }
-}
