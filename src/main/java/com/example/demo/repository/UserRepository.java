@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface UserRepository  extends JpaRepository<User, Long> {
+public interface UserRepository  extends JpaRepository<AppUser, Long> {
     UserProfile save(UserProfile userProfile);
     UserProfile findById(Long id);
     UserProfile findByEmail(String email);
