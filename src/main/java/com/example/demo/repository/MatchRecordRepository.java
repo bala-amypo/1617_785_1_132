@@ -19,7 +19,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 @Repository
-public interface MatchRecordRepository extendsJpaRepository<MatchRecord, Long>  {
+public interface MatchRecordRepository extends JpaRepository<MatchRecord, Long>  {
     MatchRecord save(MatchRecord matchRecord);
     List<MatchRecord> findByUserId(Long userId);
 }
