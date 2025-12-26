@@ -1,43 +1,46 @@
 package com.example.demo.security;
 
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+import io.jsonwebtoken.*;
+import org.springframework.stereotype.Component;
+import java.util.Date;
 
+@Component
 public class JwtUtil {
-    
+
+    private final String SECRET_KEY = "MySuperSecretKey12345";
+
     public String generateToken(String email, String role, Long userId) {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("email", email);
-        claims.put("role", role);
-        claims.put("userId", userId);
-        
-        // Simple base64 encoding for testing purposes
-        String payload = email + ":" + role + ":" + userId;
-        return Base64.getEncoder().encodeToString(payload.getBytes());
+        return Jwts.builder()
+                .claim("role", role)
+                .claim("userId", userId)
+                .setSubject(email)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .compact();
     }
-    
+
     public boolean validateToken(String token) {
         try {
-            String decoded = new String(Base64.getDecoder().decode(token));
-            return decoded.contains(":") && decoded.split(":").length == 3;
-        } catch (Exception e) {
+            Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
+            return true;
+        } catch (JwtException e) {
             return false;
         }
     }
-    
+
     public String extractEmail(String token) {
-        String decoded = new String(Base64.getDecoder().decode(token));
-        return decoded.split(":")[0];
+        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token)
+                .getBody().getSubject();
     }
-    
+
     public String extractRole(String token) {
-        String decoded = new String(Base64.getDecoder().decode(token));
-        return decoded.split(":")[1];
+        return (String) Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token)
+                .getBody().get("role");
     }
-    
+
     public Long extractUserId(String token) {
-        String decoded = new String(Base64.getDecoder().decode(token));
-        return Long.valueOf(decoded.split(":")[2]);
+        return ((Number) Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token)
+                .getBody().get("userId")).longValue();
     }
 }
