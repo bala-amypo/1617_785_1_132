@@ -10,3 +10,14 @@
 // public interface SkillRepository extends JpaRepository<Skill, Long> {
 //     Optional<Skill> findByName(String name);
 // }
+package com.example.demo.repository;
+
+import com.example.demo.model.Skill;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface SkillRepository {
+    Skill save(Skill skill);
+    List<Skill> findAll();
+}
