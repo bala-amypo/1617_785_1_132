@@ -19,7 +19,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 @Repository
-public interface SkillRequestRepository {
+public interface SkillRequestRepository extends JpaRepository<SkillRequest, Long>{
     SkillRequest save(SkillRequest skillRequest);
     SkillRequest findById(Long id);
     List<SkillRequest> findByUserId(Long userId);
