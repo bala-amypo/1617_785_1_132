@@ -22,12 +22,11 @@ public class AppUser {
     private String name;
 
     @Column(nullable = false)
-    private String role = "USER"; // default role
+    private String role = "USER"; 
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    // Constructors
     public AppUser() {}
 
     public AppUser(String email, String password, String name, String role) {
@@ -37,7 +36,6 @@ public class AppUser {
         this.role = role;
     }
 
-    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

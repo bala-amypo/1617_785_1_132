@@ -18,7 +18,6 @@ public class UserProfile {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
-    // getters & setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

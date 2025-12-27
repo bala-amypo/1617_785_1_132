@@ -15,7 +15,7 @@ public class JwtUtil {
 
     private final SecretKey SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    private final long EXPIRATION_MS = 86400000; // 1 day
+    private final long EXPIRATION_MS = 86400000; 
 
     public String generateToken(String email, String role, Long userId) {
         return Jwts.builder()

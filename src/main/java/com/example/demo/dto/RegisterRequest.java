@@ -5,10 +5,9 @@ public class RegisterRequest {
 
     private String email;
     private String password;
-    private String name; // must match getName() in controller
-    private String role; // optional
+    private String name; 
+    private String role; 
 
-    // Constructors
     public RegisterRequest() {}
 
     public RegisterRequest(String email, String password, String name, String role) {
@@ -18,7 +17,6 @@ public class RegisterRequest {
         this.role = role;
     }
 
-    // Getters and Setters
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
